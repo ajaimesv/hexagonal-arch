@@ -1,6 +1,6 @@
 # Hexagonal Architecture Demo
 
-This is a Play Framework demo implementation of the Hexagonal Architecture.
+This is a Scala / Play Framework demo implementation of the Hexagonal Architecture.
 
 Run the application:
 
