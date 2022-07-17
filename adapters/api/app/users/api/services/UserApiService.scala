@@ -1,6 +1,7 @@
-package users.adapters.api
+package users.api.services
 
-import users.domain.model.{Id, Name, Password, Username}
+import users.api.model.{UserRequest, UserResponse}
+import users.domain.model._
 import users.domain.ports.UserService
 
 import javax.inject.Inject

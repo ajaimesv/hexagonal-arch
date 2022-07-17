@@ -1,7 +1,9 @@
-package users.adapters.api
+package users.api.controllers
 
 import play.api.libs.json.{JsValue, Json}
-import play.api.mvc.{Action, AnyContent, BaseController, ControllerComponents, Request}
+import play.api.mvc._
+import users.api.model.UserRequest
+import users.api.services.UserApiService
 
 import javax.inject.Inject
 

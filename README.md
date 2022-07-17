@@ -2,6 +2,15 @@
 
 This is a Play Framework demo implementation of the Hexagonal Architecture.
 
+Run the application:
+
+```sh
+sbt
+compile
+project api
+run
+```
+
 Create a user:
 
 ```sh

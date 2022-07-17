@@ -1,2 +1,0 @@
-GET     /users/:id        users.adapters.api.UserController.read(id: String)
-POST    /users            users.adapters.api.UserController.create()

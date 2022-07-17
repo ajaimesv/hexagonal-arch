@@ -4,6 +4,9 @@ import users.domain.model.{Id, Name, Password, User, Username}
 
 import javax.inject.Inject
 
+/*
+ * UserRepository implementations are configured via api / users.api.modules.ApplicationModule.
+ */
 class UserService @Inject()(
   userRepository: UserRepository
 ) {
