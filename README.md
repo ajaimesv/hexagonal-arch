@@ -31,6 +31,26 @@ Read a user:
 curl http://localhost:9000/users/<id>
 ```
 
+Update a user:
+
+```sh
+curl -X PUT \
+  http://localhost:9000/users/<id> \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+        "name": "Joe 2",
+        "username": "joe2@example.com",
+        "password": "abcd"
+      }'
+```
+
+Delete a user:
+
+```sh
+curl -X DELETE http://localhost:9000/users/<id>
+```
+
 ## References
 
 * Kuc, Karol. Hexagonal Architecture by example - a hands-on introduction. https://blog.allegro.tech/2020/05/hexagonal-architecture-by-example.html

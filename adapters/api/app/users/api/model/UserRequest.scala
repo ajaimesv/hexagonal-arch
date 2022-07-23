@@ -1,6 +1,6 @@
 package users.api.model
 
-import play.api.libs.json.{Json, OFormat}
+import play.api.libs.json.{Json, Reads}
 
 case class UserRequest(
   name: String,
@@ -10,6 +10,6 @@ case class UserRequest(
 
 object UserRequest {
 
-  implicit val format: OFormat[UserRequest] = Json.format[UserRequest]
+  implicit val reads: Reads[UserRequest] = Json.reads[UserRequest]
 
 }

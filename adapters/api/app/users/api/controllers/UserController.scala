@@ -13,11 +13,20 @@ class UserController @Inject()(
 ) extends BaseController {
 
   def create: Action[JsValue] = Action(parse.json) { request: Request[JsValue] =>
-    Ok(Json.toJson(userApiService.create(request.body.as[UserRequest])))
+    Created(userApiService.create(request.body.as[UserRequest]))
   }
 
   def read(id: String): Action[AnyContent] = Action { request: Request[AnyContent] =>
-    Ok(Json.toJson(userApiService.read(id)))
+    Ok(userApiService.read(id))
+  }
+
+  def update(id: String): Action[JsValue] = Action(parse.json) { request: Request[JsValue] =>
+    Ok(userApiService.update(id, request.body.as[UserRequest]))
+  }
+
+  def delete(id: String): Action[AnyContent] = Action { request: Request[AnyContent] =>
+    userApiService.delete(id)
+    NoContent
   }
 
 }

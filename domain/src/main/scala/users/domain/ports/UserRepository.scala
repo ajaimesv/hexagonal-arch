@@ -14,4 +14,8 @@ trait UserRepository {
 
   def read(id: Id): User
 
+  def update(id: Id, name: Name, username: Username, password: Password): User
+
+  def delete(id: Id): Unit
+
 }

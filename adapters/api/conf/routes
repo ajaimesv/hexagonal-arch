@@ -1,2 +1,4 @@
 GET     /users/:id        users.api.controllers.UserController.read(id: String)
 POST    /users            users.api.controllers.UserController.create()
+PUT     /users/:id        users.api.controllers.UserController.update(id: String)
+DELETE  /users/:id        users.api.controllers.UserController.delete(id: String)

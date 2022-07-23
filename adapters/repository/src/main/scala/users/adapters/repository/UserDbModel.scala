@@ -2,13 +2,16 @@ package users.adapters.repository
 
 import users.domain.model._
 
+import java.time.Instant
 import java.util.UUID
 
 case class UserDbModel(
   id: String,
   name: String,
   username: String,
-  password: String
+  password: String,
+  createdAt: Instant,
+  updatedAt: Instant
 ) {
 
   def toUser: User =
@@ -27,7 +30,17 @@ object UserDbModel {
       id = UUID.randomUUID.toString,
       name = name.value,
       username = username.value,
-      password = password.value
+      password = password.value,
+      createdAt = Instant.now,
+      updatedAt = Instant.now
+    )
+
+  def apply(from: UserDbModel, name: Name, username: Username, password: Password): UserDbModel =
+    from.copy(
+      name = name.value,
+      username = username.value,
+      password = password.value,
+      updatedAt = Instant.now
     )
 
 }
