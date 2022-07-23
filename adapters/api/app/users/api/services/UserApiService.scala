@@ -1,6 +1,8 @@
 package users.api.services
 
 import play.api.libs.json.JsValue
+import play.api.mvc.Result
+import play.api.mvc.Results.Created
 import users.api.model.JsonEncoder.Implicits.UserJsonEncoder
 import users.api.model.JsonEncoder.JsonEncoderOps
 import users.api.model.UserRequest
@@ -19,12 +21,14 @@ class UserApiService @Inject()(
   userService: UserService
 ) {
 
-  def create(userRequest: UserRequest): JsValue =
-    userService.create(
+  def create(userRequest: UserRequest): Result = {
+    val user = userService.create(
       name = Name(userRequest.name),
       username = Username(userRequest.username),
       password = Password(userRequest.password)
-    ).toJson
+    )
+    Created(user.toJson).withHeaders(("Location", s"http://localhost:9000/users/${user.id.value}"))
+  }
 
   def read(id: String): JsValue =
     userService.read(Id(id)).toJson

@@ -13,7 +13,7 @@ class UserController @Inject()(
 ) extends BaseController {
 
   def create: Action[JsValue] = Action(parse.json) { request: Request[JsValue] =>
-    Created(userApiService.create(request.body.as[UserRequest]))
+    userApiService.create(request.body.as[UserRequest])
   }
 
   def read(id: String): Action[AnyContent] = Action { request: Request[AnyContent] =>
