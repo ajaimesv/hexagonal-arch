@@ -3,7 +3,10 @@ package users.api.model
 import play.api.libs.json.{JsValue, Json}
 import users.domain.model.User
 
-
+/*
+ * We use type classes for api responses because they have a nice syntax, and we want to
+ * avoid creating classes that may tempt us to add business logic in this layer.
+ */
 object JsonEncoder {
 
   trait JsonEncoder[A] {

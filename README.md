@@ -2,6 +2,8 @@
 
 This is a Scala / Play Framework demo implementation of the Hexagonal Architecture.
 
+![Class diagram](docs/class-diagram.png)
+
 Run the application:
 
 ```sh
